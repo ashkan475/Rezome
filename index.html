@@ -1,67 +1,161 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f9f9f9;
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            width: 500px; 
-            padding: 20px;
-            border-radius: 10px;
-            background-color: #e0f7fa; 
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
-            text-align: center;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 12px;
-            text-align: center;
-            border: none; 
-        }
-        th {
-            background-color: #b2ebf2;
-        }
-        tr:nth-child(even) {
-            background-color: #f0f0f0;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Navbar + Carousel</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    
+    .my-blue {
+        background-color: #373d47 !important;
+    }
+    .navbar-nav .nav-item + .nav-item {
+        margin-right: 20px; 
+    }
+
+   
+    .carousel-inner img {
+        width: 70%;           
+        height: 300px;      
+        object-fit: cover;   
+        display: block;
+        margin: 0 auto;     
+        border-radius: 10px;  
+    }
+
+    
+    .carousel-control-prev,
+    .carousel-control-next {
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        background-color: rgba(0,0,0,0.5);
+        border-radius: 50%;
+    }
+
+    
+    .carousel-indicators [data-bs-target] {
+        background-color: #000 !important;
+        opacity: 0.7;
+    }
+    .carousel-indicators .active {
+        background-color: #b1b19e !important;
+        opacity: 1;
+    }
+    .card1
+    {
+        width: 10%;
+    }
+</style>
 </head>
 <body>
 
-    <div class="container">
+<nav class="navbar navbar-dark my-blue">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
         
-        <table>
-            <tr>
-                <th>نام</th>
-                <th>سن</th>
-            </tr>
-            <tr>
-                <td>علی</td>
-                <td>25</td>
-            </tr>
-            <tr>
-                <td>سارا</td>
-                <td>30</td>
-            </tr>
-            <tr>
-                <td>محمد</td>
-                <td>22</td>
-            </tr>
-        </table>
-    </div>
+        <ul class="navbar-nav d-flex flex-row">
+            <li class="nav-item"><a class="nav-link text-light" href="#">Link 1</a></li>
+            <li class="nav-item"><a class="nav-link text-light" href="#">Link 2</a></li>
+            <li class="nav-item"><a class="nav-link text-light" href="#">Link 3</a></li>
+        </ul>
 
+        
+        <button class="btn btn-light">ورود / ثبت نام</button>
+    </div>
+</nav>
+
+
+<div class="carousel-container mt-2">
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+       
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2"></button>
+        </div>
+
+       
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://media.istockphoto.com/id/1038943476/photo/scenic-view-of-lago-di-braies-in-dolomites.jpg?s=612x612&w=0&k=20&c=0-7_B6c6-FUxA2cybM78UQ37O2hSmaPQx2OQB32VtP0=" alt="Slide 1">
+            </div>
+            <div class="carousel-item">
+                <img src="https://media.istockphoto.com/id/1038943424/photo/scenic-view-of-lago-di-braies-in-dolomites.webp?b=1&s=612x612&w=0&k=20&c=Q2_3EEwBz1SNzabTgSEF0rtXx1UF093sePpxmR21b7c=" alt="Slide 2">
+            </div>
+            <div class="carousel-item">
+                <img src="https://media.istockphoto.com/id/1306075353/photo/morning-fog-over-a-beautiful-lake-surrounded-by-pine-forest-stock-photo.jpg?s=612x612&w=0&k=20&c=PTH4TzIT6lpLgdHlw7knXEJL7TwmpQX8H5G4Y5nuLaA=" alt="Slide 3">
+            </div>
+        </div>
+
+        
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</div>
+
+
+
+
+<div class="container my-4 d-flex justify-content-center">
+    <div class="col-md-4"> 
+        <div class="card">
+            <img src="https://media.istockphoto.com/id/1043959780/photo/longs-peak-at-bear-lake-longs-peak-and-glacier-gorge-reflecting-in-blue-bear-lake-on-a-calm.jpg?s=612x612&w=0&k=20&c=RlGUdCI1X2luuxBKnqtI04WnlqO91MZ0RYfJOFyxSoc=" 
+                 class="card-img-top" 
+                 alt="تصویر Card"
+                 style="height:200px; object-fit:cover;"> 
+            <div class="card-body text-center">
+                <h5 class="card-title">Card test</h5>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="text-center my-4">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+        باز کردن Modal
+    </button>
+</div>
+
+
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered"> 
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalLabel">modal test</h5>
+        
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">بستن</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container my-4">
+    
+    <div class="progress" style="height: 25px;">
+        <div class="progress-bar bg-success" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+            
+        </div>
+    </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
